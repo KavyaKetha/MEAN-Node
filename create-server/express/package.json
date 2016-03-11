@@ -1,0 +1,8 @@
+{
+  "name": "creatingexpressserver",
+  "main": "server.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

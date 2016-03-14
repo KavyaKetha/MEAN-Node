@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} @author : Kavya
+${licensePrefix}@purpose : Creating  listener server in node using http-server ${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>

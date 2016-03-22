@@ -8,7 +8,7 @@ var express = require('express'),
         port = 3000,
         app = express(),
         mongoose = require('mongoose'),
-        dbConnection = 'mongodb://localhost/local';
+        dbConnection = 'mongodb://localhost/meannode';
 
 mongoose.connect(dbConnection, function (err, res) {
     if (err) {
@@ -23,7 +23,6 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public/views'));
 //requiring the routes
 require('./app/routes/server.routes.js')(app);
-require('./app/controllers/server.controller.js');
 app.listen(port, function () {
     console.log('Server on port', port);
 });

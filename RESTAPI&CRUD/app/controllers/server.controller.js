@@ -14,14 +14,6 @@ exports.savingToDB = function (req, res) {
     var userObj = new UserData();
     userObj.email = req.body.email;
     userObj.password = req.body.password;
-    userObj.save(function(err,obj){
-        if(err){
-            console.log('Error occured',err);
-            res.send('Error occured',err);
-        }else{
-            res.send('Data Saved to DB!');
-        }
-        
-    });
+    userObj.save();
     
 }

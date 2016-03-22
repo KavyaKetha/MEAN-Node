@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <!--
  @author : Kavya
-@purpose : Creating  listener server in node using http-server 
+@purpose : Form with email and password to be saved into DB 
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Saving Data To DB</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
-        <form action="/saveData" method="POST">
-            <input type="text" name="user">
-            <input type="password" name="password">
-            <input type="submit" value="Save To DB">
-        </form>
+        <div class="container">
+             <h2 align="center">Sample Form</h2>
+            <form role="form" action="/saveData" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="user" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-default">Save To DB</button>
+            </form>
+        </div>
     </body>
 </html>

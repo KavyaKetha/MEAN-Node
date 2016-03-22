@@ -3,13 +3,30 @@
  @author : Kavya
 @purpose : Index Page 
 -->
-<html>
+<html >
     <head>
         <title>RESTful APIs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
     </head>
-    <body>
-        <div></div>
+    <body ng-app="RestApi">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="#">MEAN STACK APPLICATION</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a  ui-sref="addUser">ADD USER</a></li>
+                <li><a  ui-sref="viewUser">VIEW USER</a></li>
+                <li><a  ui-sref="updateUser">UPDATE USER</a></li>
+                <li><a  ui-sref="deleteUser">DELETE USER</a></li>
+            </ul>
+        </nav>
+        <div ui-view></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script src="../app/app.js"></script>
+        <script src="../app/app.config.js"></script>
+        <script src="../app/controllers/restApi.controller.js"></script>
     </body>
 </html>

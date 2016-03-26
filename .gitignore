@@ -37,3 +37,8 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+/DataToMongoFromHTML/nbproject/private/
+/HttpInterceptor/nbproject/private/
+/Services&HttpInterceptor/nbproject/private/
+/savedatainmongodb/nbproject/private/
+/savedatainmongodb_1/nbproject/private/

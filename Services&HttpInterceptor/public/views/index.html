@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+ @author : Kavya
+@purpose : Index Page 
+-->
+<html ng-app="TokenAuth">
+    <head>
+        <title>JSON Web Tokens</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="#">MEAN STACK APPLICATION</a>
+            </div>
+            <ul class="nav navbar-nav"  ng-hide="$state.current.name=='login'">
+                <li><a  ui-sref="addUser">ADD USER</a></li>
+                <li><a  ui-sref="viewUser">VIEW USER</a></li>
+                <li><a  ui-sref="updateUser">UPDATE USER</a></li>
+                <li><a  ui-sref="deleteUser">DELETE USER</a></li>
+                <li><a  ui-sref="login">Home</a></li>
+            </ul>
+        </nav>
+        <div ui-view></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script src="../app/app.js"></script>
+        <script src="../app/app.config.js"></script>
+        <script src="../app/services/apiRequest.services.js"></script>  
+        <script src="../app/controllers/apiRequest.controller.js"></script>
+        
+    </body>
+</html>

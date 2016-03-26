@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+ @author : Kavya
+@purpose : Index Page 
+-->
+<html >
+    <head>
+        <title>Mark Down Editor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
+        <style>
+
+            html, body, section, .full-height {
+                height: 100%;
+            } 
+
+            #pad{
+                font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+                border: none;
+                overflow: auto;
+                outline: none;
+                resize: none;
+            }
+
+            #markdown {
+                overflow: auto;
+                border-left: 1px solid black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="#">Mark Down Editor APPLICATION</a>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <section class="row">
+                <textarea class="col-md-6 full-height" id="pad">
+Markdown
+=========
+                </textarea>
+                <div class="col-md-6 full-height" id="markdown"></div>
+            </section>
+
+        </div>
+
+        <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
+        <script>
+            window.onload = function () {
+                console.log('heree');
+                var converter = new showdown.Converter();
+                var pad = document.getElementById('pad');
+                var markdownArea = document.getElementById('markdown');
+
+                var convertTextAreaToMarkdown = function () {
+                    var markdownText = pad.value;
+                    html = converter.makeHtml(markdownText);
+                    markdownArea.innerHTML = html;
+                };
+
+                pad.addEventListener('input', convertTextAreaToMarkdown);
+                convertTextAreaToMarkdown();
+            };
+        </script>
+
+    </body>
+</html>

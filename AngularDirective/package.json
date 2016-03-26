@@ -1,0 +1,11 @@
+{
+  "name": "angulardirective",
+  "main": "server.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "morgan": "~1.7.0",
+    "body-parser": "~1.15.0",
+    "express": "~4.13.4",
+    "path": "~0.12.7"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "image-upload-in-node",
+  "main": "server.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "formidable": "^1.0.17",
+    "mongoose": "^4.4.12",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}

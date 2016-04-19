@@ -5,9 +5,19 @@
 
 var express = require('express'),
         bodyparser = require('body-parser'),
+        mongoose = require('mongoose'),
+        dbConnection = 'mongodb://localhost/meannode',
         morgan = require('morgan'),
         port = 3010,
         app = express();
+
+mongoose.connect(dbConnection, function (err, res) {
+    if (err) {
+        console.log('ERROR connecting to: ' + dbConnection + '. ' + err);
+    } else {
+        console.log('Successfully connected to: ' + dbConnection);
+    }
+}); 
 
 app.use(bodyparser.json());
 app.use(morgan('dev'));

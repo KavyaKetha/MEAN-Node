@@ -6,20 +6,18 @@
 var express = require('express'),
         bodyparser = require('body-parser'),
         morgan = require('morgan'),
-        port = 3000,
-        app = express();
+        port = 3010,
+        app = express(),
+        path    = require('path');
 
 app.use(bodyparser.json());
 app.use(morgan('dev'));
 //gives the static pages access
 app.use(express.static(__dirname + '/public'));
-var controllers = require('./app/controllers/server.controller.js');
-var apiRoutes = express.Router(); 
-apiRoutes.use(controllers.verifyToken);
-app.use('/api', apiRoutes);
 //requiring the routes
-require('./app/routes/server.routes.js')(app,apiRoutes);
-
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname + '/public/views/index.html'));
+})
 app.listen(port, function () {
     console.log('Server on port', port);
 });

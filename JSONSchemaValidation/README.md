@@ -105,13 +105,11 @@ At its core, JSON Schema defines the following basic types:
 Example:
 
 {
-
     "type": "string",
 
     "minLength": 2,
 
     "maxLength": 3
-
 }
 
 { 

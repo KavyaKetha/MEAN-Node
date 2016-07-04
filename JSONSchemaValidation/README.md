@@ -2,10 +2,15 @@
 
 # **JSON Schema Validation**
 
+
+**$schema**
+
 The $schema keyword is used to declare that a JSON fragment is actually a piece of JSON Schema. It also declares
 which version of the JSON Schema standard that the schema was written against.
 It is recommended that all JSON Schemas have a $schema entry, which must be at the root. 
 
+
+**id**
 
 
 The id property serves two purposes:
@@ -33,6 +38,8 @@ in the same file, a JSON schema validation library would fetch person.json from
 http://foo.bar/schemas/person.json, even if address.json was loaded from the local filesystem.
 
 
+**$ref**
+
 
 The symbol (#) refers to the current document, and then the slash (/) separated keys thereafter just traverse
 the keys in the objects in the document. Therefore, in our example "#/definitions/address" means:
@@ -46,7 +53,9 @@ the keys in the objects in the document. Therefore, in our example "#/definition
 $ref can also be a relative or absolute URI, so if you prefer to include your definitions in separate files, you can also
 do that
 
+
 The keywords used to combine schemas are:
+
 
 • allOf : Must be valid against all of the subschemas
 
@@ -73,7 +82,7 @@ Example:
 }
 
 
-# **Type:**
+ **Type:**
 
 At its core, JSON Schema defines the following basic types:
 
@@ -141,7 +150,9 @@ Example:
 
 }
 
-Built-in formats
+
+**Built-in formats**
+
 
 The following is the list of formats specified in the JSON Schema specification.
 

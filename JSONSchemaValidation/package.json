@@ -1,0 +1,9 @@
+{
+  "name": "jsonschemavalidation",
+  "main": "server.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "commonjs-utils": "^0.1.1",
+    "fs": "0.0.2"
+  }
+}

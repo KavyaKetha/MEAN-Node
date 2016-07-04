@@ -1,0 +1,15 @@
+{
+    "address": {
+        "street_address": "Street1",
+        "city": "City1",
+        "state": "State1"
+    },
+    "billing_address": {
+        "street_address": "Street1",
+        "city": "City1",
+        "state": "State1"
+    },
+    "shipping_address": {
+        "type": "residential"
+    }
+}

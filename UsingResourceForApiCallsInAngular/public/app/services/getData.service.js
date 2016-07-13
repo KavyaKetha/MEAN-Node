@@ -3,6 +3,6 @@
  * @purpose : Use Rest Apis here 
  */
 angular.module('ResourceApp').factory('ResourceFactory',function($resource){
-    return $resource('/user/:id');
+    return $resource('/user/:id',null,{ 'update': { method:'PUT' }});
 });
 

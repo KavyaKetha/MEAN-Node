@@ -25,28 +25,11 @@ angular.module('ResourceApp').controller('restApiController', function ($scope, 
             "phone": $scope.phone,
             "address": $scope.address
         };
-         /* Update is used to post data to Server internally uses PUT request*/
+         /* Update data to Server using PUT request*/
         ResourceFactory.update({id: $scope.email},$scope.updatedata, function (test) {
             console.log(test, 'test data is here');
             $scope.userstatus = 'User has been ADDED';
         });
-//        $http({
-//            method: 'PUT',
-//            url: '/user',
-//            data: {
-//                "name": $scope.name,
-//                "email": $scope.email,
-//                "phone": $scope.phone,
-//                "address": $scope.address
-//            }
-//
-//        }).then(function (data) {
-//            console.log(data.data.nModified);
-//            if (data.data.nModified)
-//                $scope.message = "Updated User !";
-//            else
-//                $scope.message = "User Not found !";
-//        });
     };
     $scope.userdata = false;
     $scope.viewUser = function () {
@@ -76,5 +59,11 @@ angular.module('ResourceApp').controller('restApiController', function ($scope, 
                 $scope.message = "User Not found !";
         });
     };
+    
+    $scope.close = function(){
+        $scope.userstatus = "";
+        $scope.userstatus = false;
+        $scope.message = "";
+    }
 });
 

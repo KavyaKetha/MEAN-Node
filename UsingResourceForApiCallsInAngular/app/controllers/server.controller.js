@@ -68,6 +68,7 @@ exports.updateUser = function (req, res) {
     userTable.name = req.body.name;
     userTable.email = req.body.email;
     userTable.password = req.body.password;
+    console.log(req.params.id,'dusaiofj');
     userTable.update({email: req.params.id},{$set:{phone:req.body.phone,name:req.body.name,address:req.body.address}},function(err,obj){
         if(err){
             console.log('Error occured',err);

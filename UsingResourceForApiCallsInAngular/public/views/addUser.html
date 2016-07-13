@@ -7,14 +7,15 @@
     <div class="col-sm-8 col-sm-offset-2">
 
         <!-- PAGE HEADER -->
+        <div class="form-group alert alert-success alert-dismissible" ng-show="userstatus" role="alert" ng-click="close()">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span><h5>{{userstatus}}</h5></span>
+        </div>
         <div class="page-header"><h1>ADD USER</h1></div>
 
         <!-- FORM -->
         <!-- pass in the variable if our form is valid or invalid -->
         <form name="formData" ng-submit="addUser()"> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
-            <div class="form-group" ng-show="userstatus">
-                <span><h3>{{userstatus}}</h3></span>
-            </div>
             <!-- NAME -->
             <div class="form-group" ng-class="{'has-error':formData.name.$invalid && !formData.name.$pristine}">
                 <label>Name</label>

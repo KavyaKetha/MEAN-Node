@@ -6,10 +6,11 @@
     <div class="col-sm-8 col-sm-offset-2">
 
         <!-- PAGE HEADER -->
-        <div class="page-header"><h1>UPDATE USER</h1></div>
-        <div class="jumbotron text-center" ng-show="message">
-            <h4>{{message}}</h4>
+        <div class="form-group alert alert-success alert-dismissible" ng-show="message" role="alert" ng-click="close()">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span><h5>{{message}}</h5></span>
         </div>
+        <div class="page-header"><h1>UPDATE USER</h1></div>
         <!-- FORM -->
         <!-- pass in the variable if our form is valid or invalid -->
         <form name="formData" ng-submit="updateUser()" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->

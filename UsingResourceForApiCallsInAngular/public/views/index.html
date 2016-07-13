@@ -9,18 +9,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" >
+        <style>
+            .navbar-inverse .navbar-nav>li>a:hover,
+            .navbar-inverse .navbar-nav>li>a:focus{
+                background-color: #CCC;
+            }
+            .navbar-inverse .navbar-nav>li>a.active-state{
+                background-color: #555;
+            }
+        </style>
     </head>
     <body ng-app="ResourceApp">
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="#">MEAN STACK APPLICATION</a>
+                <a class="navbar-brand">MEAN STACK APPLICATION</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a  ui-sref="addUser">ADD USER</a></li>
-                <li><a  ui-sref="viewUser">SEARCH USER</a></li>
-                <li><a  ui-sref="updateUser">UPDATE USER</a></li>
-                <li><a  ui-sref="deleteUser">DELETE USER</a></li>
-                <li><a  ui-sref="viewAllUsers">VIEW ALL USERS</a></li>
+                <li><a  ui-sref="addUser" ng-class="{'active-state':$state.current.name == 'addUser'}">ADD USER</a></li>
+                <li><a  ui-sref="viewUser" ng-class="{'active-state':$state.current.name == 'viewUser'}">SEARCH USER</a></li>
+                <li><a  ui-sref="updateUser" ng-class="{'active-state':$state.current.name == 'updateUser'}">UPDATE USER</a></li>
+                <li><a  ui-sref="deleteUser" ng-class="{'active-state':$state.current.name == 'deleteUser'}">DELETE USER</a></li>
+                <li><a  ui-sref="viewAllUsers" ng-class="{'active-state':$state.current.name == 'viewAllUsers'}">VIEW ALL USERS</a></li>
             </ul>
         </nav>
         <div ui-view></div>

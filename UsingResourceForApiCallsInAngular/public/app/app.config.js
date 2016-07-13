@@ -5,6 +5,9 @@
  */
 'use strict';
 angular.module('ResourceApp')
+        .run(["$rootScope", "$state", function ($rootScope, $state) {
+            $rootScope.$state = $state; // state to be accessed from view
+        }])
         .config(['$stateProvider', function ($stateProvider) {
                 $stateProvider
                         .state('addUser', {

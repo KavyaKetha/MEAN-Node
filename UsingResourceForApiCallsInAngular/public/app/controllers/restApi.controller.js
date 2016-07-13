@@ -64,6 +64,7 @@ angular.module('ResourceApp').controller('restApiController', function ($scope, 
         $scope.userstatus = "";
         $scope.userstatus = false;
         $scope.message = "";
+        document.getElementsByTagName('input').value='';
     }
 });
 

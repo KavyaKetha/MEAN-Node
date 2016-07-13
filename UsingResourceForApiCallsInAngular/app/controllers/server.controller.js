@@ -5,18 +5,17 @@
 
 var userTable = require('../models/userTable.js'),
         path = require('path');
-var usert = new userTable();
 exports.renderIndexPage = function (req, res) {
     res.sendFile(path.join(__dirname + '../../../public/views/index.html'));
     //__dirname : It will resolve to your project folder.
 };
 
 exports.addUserDetails = function (req, res) {
+    var usert = new userTable();
     usert.name = req.body.name;
     usert.phone = req.body.phone;
     usert.email = req.body.email;
     usert.address = req.body.address;
-
     usert.save(function (err, usrObj) {
         if (err) {
             console.log(err);
@@ -65,11 +64,11 @@ exports.deleteUser = function (req, res) {
 };
 
 exports.updateUser = function (req, res) {
-    userTable.name = req.body.name;
-    userTable.email = req.body.email;
-    userTable.password = req.body.password;
-    console.log(req.params.id,'dusaiofj');
-    userTable.update({email: req.params.id},{$set:{phone:req.body.phone,name:req.body.name,address:req.body.address}},function(err,obj){
+    var usert = new userTable();
+    usert.name = req.body.name;
+    usert.email = req.body.email;
+    usert.password = req.body.password;
+    usert.update({email: req.params.id},{$set:{phone:req.body.phone,name:req.body.name,address:req.body.address}},function(err,obj){
         if(err){
             console.log('Error occured',err);
             res.status('Error occured').send(err);
